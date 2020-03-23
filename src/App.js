@@ -29,12 +29,11 @@ class App extends Component {
             ...snapShot.data()
           });
         })
-      } else {
-        setCurrentUser(userAuth);
       }
+      setCurrentUser(userAuth);
     });
   }
-
+ 
   componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
@@ -55,7 +54,7 @@ class App extends Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
 })
 
 const mapDispatchToProps = (dispatch) => ({
